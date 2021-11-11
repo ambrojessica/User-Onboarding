@@ -3,7 +3,7 @@ import React from 'react';
 const Form = (props) => {
 
   const { change, submit, disabled } = props
-  const {name, email, password, checked} = props.values;
+  const {name, email, password, tos } = props.values;
 
   const onSubmit = evt => {
     evt.preventDefault();
@@ -49,11 +49,11 @@ const Form = (props) => {
       />
       </label>
 
-      <label>
+      <label>Terms of Service:
         <input 
         type='checkbox'
         name='tos'
-        checked={checked}
+        checked={tos}
         onChange={onChange}
         />
       </label>
