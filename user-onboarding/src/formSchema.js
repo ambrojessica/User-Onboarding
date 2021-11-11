@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const formSchema = yub.object().shape({
+const formSchema = yup.object().shape({
   name: yup
     .string()
     .trim()
@@ -17,7 +17,7 @@ const formSchema = yub.object().shape({
     .string()
     .trim()
     .required('Please Enter a Strong Password')
-    .min(3, 'Password must be more than 3 characters'),
+    .min(5, 'Password must be more than 5 characters'),
 
   tos: yup
     .boolean()

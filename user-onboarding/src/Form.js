@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = (props) => {
 
-  const { change, submit, disabled } = props
+  const { change, submit, errors } = props
   const {name, email, password, tos } = props.values;
 
   const onSubmit = evt => {
@@ -20,6 +20,10 @@ const Form = (props) => {
     <form className='form' onSubmit={onSubmit}>
       <div>
       <h2>Create a NEW Account, it is SIMPLE and EASY!</h2>
+      <div>{errors.name}</div>
+      <div>{errors.email}</div>
+      <div>{errors.password}</div>
+      <div>{errors.tos}</div>
 
       <h3>Information Here 🡳 </h3>
       <label>Full Name:
@@ -43,7 +47,7 @@ const Form = (props) => {
       <label>Password:
       <input 
         value={password}
-        name='first name'
+        name='password'
         type='password'
         onChange={onChange}
       />
@@ -57,7 +61,7 @@ const Form = (props) => {
         onChange={onChange}
         />
       </label>
-      <button disabled={disabled}>submit</button>
+      <button>submit</button>
       </div>
 
     </form>
